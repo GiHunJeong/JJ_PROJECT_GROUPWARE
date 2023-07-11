@@ -6,5 +6,5 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<jsp:forward page="/main/loginPage.do"/>
+<jsp:forward page="/main/main.do"/>
 <%--script type="text/javaScript">document.location.href="<c:url value='/login.do'/>"</script>--%>

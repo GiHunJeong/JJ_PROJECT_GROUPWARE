@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="login">
+    <select id="loginCheck" resultType="map" parameterType="map">
+        SELECT
+            *
+        FROM
+            jj_emp AS a
+        WHERE
+            a.ACTIVE = 'Y'
+          and
+            a.RETIRE = 'N'
+          and
+            a.LOGIN_ID = #{id}
+        limit 1
+    </select>
+    <select id="actionLogin" parameterType="map" resultType="springframework.com.common.dto.LoginVO">
+        SELECT
+            E.LOGIN_ID AS 'id',
+                E.PASSWORD AS 'PASSWORD',
+                E.EMP_NAME AS 'name',
+                E.EMAIL_ID AS 'emailId',
+                E.EMP_SEQ AS 'empSeq',
+                E.DEPT_NAME AS 'deptName',
+                E.DEPT_CODE AS 'deptCode',
+                E.ADDR AS 'addr',
+                E.ADDR_DETAIL AS 'addrDetail',
+                E.ZIP_CODE AS 'zipCode',
+                E.REG_DATE AS 'regDate'
+        FROM
+            jj_emp AS E
+        WHERE
+            E.ACTIVE = 'Y'
+          and
+            E.RETIRE = 'N'
+          and
+            E.LOGIN_ID = #{id}
+            LIMIT 1
+    </select>
+    <select id="testSelect" resultType="map">
+        select
+            a.*
+            from
+                jj_emp as a
+    </select>
+</mapper>

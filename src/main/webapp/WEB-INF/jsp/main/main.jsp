@@ -17,20 +17,5 @@
 </div>
 <jsp:include page="/WEB-INF/jsp/template/footer.jsp" flush="false"/>
 <script>
-    $(function() {
-       $('#mainGrid').kendoGrid({
-           selectable: "multiple cell",
-           allowCopy: true,
-           columns: [
-               { field: "productName" },
-               { field: "category" }
-           ],
-           dataSource: [
-               { productName: "Tea", category: "Beverages" },
-               { productName: "Coffee", category: "Beverages" },
-               { productName: "Ham", category: "Food" },
-               { productName: "Bread", category: "Food" }
-           ]
-       });
-    });
+
 </script>
