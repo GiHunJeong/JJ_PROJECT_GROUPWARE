@@ -4,10 +4,6 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
-    <welcome-file-list>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
-
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -21,14 +17,17 @@
         <url-pattern>*.do</url-pattern>
     </filter-mapping>
 
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath*:config/spring/context-*.xml</param-value>
-    </context-param>
-
+    <listener>
+        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:springframework/config/spring/context-*.xml</param-value>
+    </context-param>
 
     <servlet>
         <servlet-name>action</servlet-name>
@@ -89,6 +88,10 @@
         <servlet-name>default</servlet-name>
         <url-pattern>*.xlsx</url-pattern>
     </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
 
     <session-config>
         <session-timeout>600</session-timeout>

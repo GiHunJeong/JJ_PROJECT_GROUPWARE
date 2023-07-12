@@ -11,7 +11,7 @@
         <property name="locations">
             <list>
                 <!--                <value>classpath:/egovframework/egovProps/config-#{systemProperties['spring.profiles.active']}.properties</value>-->
-                <value>classpath:/props/config-jj.properties</value>
+                <value>classpath:springframework/props/config-jj.properties</value>
                 <!-- value>file:/product/jeus/egovProps/globals.properties</value-->
             </list>
         </property>
@@ -38,7 +38,7 @@
         <property name="password" value="mysql@1234"/>
     </bean>-->
     <!-- mysql -->
-    <bean id="dataSource-mysql" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+    <bean id="dataSource-mariadb" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${Globals.DriverClassName}"/>
         <property name="url" value="${Globals.Url}" />
         <property name="username" value="${Globals.UserName}"/>
@@ -46,7 +46,7 @@
     </bean>
 
     <bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
-        <constructor-arg ref="dataSource-mysql" />
+        <constructor-arg ref="dataSource-mariadb" />
         <property name="logFormatter">
             <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
                 <property name="loggingType" value="MULTI_LINE" />

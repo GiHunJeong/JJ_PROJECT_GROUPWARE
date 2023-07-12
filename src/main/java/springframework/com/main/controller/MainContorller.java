@@ -16,17 +16,10 @@ public class MainContorller {
     private static final Logger logger = LoggerFactory.getLogger(LoginContorller.class);
     @RequestMapping("/main/mainPage.do")
     public String mainPage() {
-        System.out.println("메인페이지 이동");
         return "main/main";
     }
     @RequestMapping("/loginPage.do")
     public String loginPage() {
         return "login/login";
-    }
-    @RequestMapping("/test")
-    public String test(@RequestParam Map<String,Object> map , Model model) {
-        System.out.println(map);
-        model.addAttribute("rs", "test");
-        return "jsonView";
     }
 }
