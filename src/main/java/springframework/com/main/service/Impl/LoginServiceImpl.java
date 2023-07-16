@@ -37,4 +37,10 @@ public class LoginServiceImpl implements LoginService {
         LoginVO login = loginRepository.actionLogin(loginVO);
         return login;
     }
+    /* 사용법 부분 삭제될 부분 */
+    @Override
+    public List<Map<String,Object>> getTestDataSmaple() {
+        return loginRepository.getTestDataSmaple();
+    }
+    /* 사용법 부분 삭제될 부분 */
 }

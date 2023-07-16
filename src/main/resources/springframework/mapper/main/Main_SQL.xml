@@ -8,4 +8,10 @@
         FROM
             tb_member AS tm
     </select>
+    <select id="getTestDataSmaple" resultType="map">
+        select
+            a.*
+        from
+            jj_emp as a
+    </select>
 </mapper>

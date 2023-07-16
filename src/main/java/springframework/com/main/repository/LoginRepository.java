@@ -15,4 +15,9 @@ public class LoginRepository extends AbstractDAO {
     public LoginVO actionLogin(LoginVO loginVO) {
         return (LoginVO) selectOne("login.actionLogin",loginVO);
     }
+    /* 사용법 부분 삭제될 부분 */
+    public List<Map<String,Object>> getTestDataSmaple() {
+        return selectList("test.getTestDataSmaple");
+    }
+    /* 사용법 부분 삭제될 부분 */
 }
